@@ -4,9 +4,7 @@ const isloggedin = require("../middlewares/isLoggedin");
 const productModel = require("../models/product-model");
 const userModel = require("../models/user-model");
 
-const path=require("path")
-const app=express();
-app.set('views', path.join(__dirname, 'views'));
+
 
 const {createOrder , verifyPayment} = require('../controllers/payment');
 router.post('/createOrder',createOrder);
