@@ -23,7 +23,7 @@ module.exports.registerUser = async (req, res) => {
             fullname,
         });
         const token = generateToken(user);
-        res.cookie("token", token, { httpOnly: true });
+        res.cookie("token", token);
         req.flash("success", "Registration successful");
         return res.redirect("/shop");
     } catch (err) {
@@ -47,7 +47,7 @@ module.exports.loginUser = async (req, res) => {
             return res.redirect("/");
         }
         const token = generateToken(user);
-        res.cookie("token", token, { httpOnly: true });
+        res.cookie("token", token);
         req.flash("success", "Login successful");
         return res.redirect("/shop");
     } catch (err) {
