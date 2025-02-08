@@ -26,6 +26,7 @@ app.use(
 app.use(flash());
 app.use(cookeiParser());
 app.use(express.json());
+app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname,'public')));
 app.use(express.urlencoded({ extended:true}));
 app.set('view engine', 'ejs');
