@@ -3,7 +3,7 @@ const config = require("config");
 
 const debug = require("debug")("production:mongoose"); // Set DEBUG=development:mongoose  in environment variables
 mongoose
-  .connect(`${config.get("MONGODB_URI")}`)
+  .connect(process.env.MONGODB_URI )
   .then(() => {
     debug('Connected to MongoDB');
   })
